@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import Layout from '../../components/ui/Layout'
 import { Link } from 'react-router-dom'
-import { routes } from '../../constants/routesConstants'
+import { routes } from "../../constants/routerConstants"
 import RegisterForm from '../../components/user/RegisterForm'
 
 const Login: FC = () => {
@@ -47,7 +47,6 @@ const Login: FC = () => {
                     </div>
                     <RegisterForm/>
                     <div style={{flex: 1}}></div>
-                    {/* Create space to push the link to the bottom */}
                     <div className="fs-6" style={{marginBottom: '30px'}}>
                         Already have an account?{' '}
                         <Link

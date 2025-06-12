@@ -2,8 +2,7 @@ import React, {FC, useEffect, useState} from 'react'
 import {useLocation, useNavigate} from 'react-router-dom'
 import authStore from '../../stores/auth.store'
 import * as API from '../../api/Api'
-import {fetchMe, updateUser} from '../../api/Api'
-import {StatusCode} from '../../constants/errorConstants'
+import { updateUser } from '../../api/Api'
 import ToastContainer from 'react-bootstrap/ToastContainer'
 import Toast from 'react-bootstrap/Toast'
 import 'bootstrap/js/src/collapse.js'
@@ -38,7 +37,7 @@ const LoggedInNavBar: FC = () => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
-    const { data, isLoading, error } = useQuery('fetchMe', fetchMe, {
+    const { data, isLoading, error } = useQuery('fetchMe', {
         keepPreviousData: true,
         refetchOnWindowFocus: false,
     })
