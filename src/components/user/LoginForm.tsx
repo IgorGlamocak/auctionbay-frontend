@@ -1,18 +1,16 @@
 import { RegisterUserFields, useRegisterForm } from '../../hooks/react-hook-form/useRegister'
-import React, { ChangeEvent, FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import ToastContainer from 'react-bootstrap/ToastContainer'
 import Toast from 'react-bootstrap/Toast'
 import Button from 'react-bootstrap/Button'
 import FormLabel from 'react-bootstrap/FormLabel'
 import Form from 'react-bootstrap/Form'
 import { Controller } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import authStore from '../../stores/auth.store'
 import * as API from '../../api/Api'
 import { StatusCode } from '../../constants/errorConstants'
 import { observer } from 'mobx-react'
-import Cookies from 'js-cookie'
-import Avatar from 'react-avatar'
 
 const RegisterForm: FC = () => {
     const navigate = useNavigate()
@@ -32,7 +30,7 @@ const RegisterForm: FC = () => {
             setApiError(response.data.message)
             setShowError(true)
         } else {
-            // Login user after successful registrationAdd commentMore actions
+            // Login user after successful registration
             const loginResponse = await API.login({
                 email: data.email,
                 password: data.password,
@@ -202,8 +200,8 @@ const RegisterForm: FC = () => {
                 />
                 <div className="d-flex justify-content-between align-items-center mb-2">
                 </div>
-                <Button className="w-100 login-button" type="submit">
-                    Login
+                <Button className="w-100 login-button" type="submit"  onMouseUp={handleFileError}>
+                    Sign up
                 </Button>
             </Form>
             {showError && (
